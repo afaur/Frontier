@@ -1,0 +1,14 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    greactor (0.1.0)
+    grhttp (0.1.0)
+      greactor (~> 0.1.0)
+    plezi (0.11.0)
+      grhttp (~> 0.1.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  plezi (~> 0.11.0)

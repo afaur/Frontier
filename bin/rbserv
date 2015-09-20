@@ -1,0 +1,18 @@
+#!/usr/bin/env ruby
+
+# Where the lib path is
+LIB_PATH = File.expand_path( File.dirname(__FILE__) ) + '/../lib/ruby'
+
+# This is the ruby webserver framework we are using
+require 'plezi'
+
+# Bookmark App
+if ( ARGV[0] == "1" )
+  require LIB_PATH + '/bookmark_example/server.rb'
+end
+
+# Chat App
+if ( ARGV[0] == "2" )
+  require LIB_PATH + '/chat_example/server.rb'
+end
+

@@ -1,0 +1,11 @@
+#!/usr/bin/env python
+
+import os, sys
+
+global LIB_PATH;
+LIB_PATH = os.path.abspath( os.path.dirname( os.path.realpath(__file__) ) + "/../lib/python");
+
+if sys.argv[1] == "1":
+    sys.path.append(LIB_PATH + "/bookmark_example/")
+    import server
+

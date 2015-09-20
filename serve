@@ -1,0 +1,67 @@
+#!/usr/bin/env bash
+
+function question {
+echo $1
+echo $2
+
+  # if only first arg is specified
+  if [ "$1" == "main" ] && [ -z "$2" ]
+  then
+    echo '------------------------------------------------'
+    echo 'Which server would you like to use?'
+    echo '------------------------------------------------'
+    echo '1) Ruby [plezi] [supports ws examples]'
+    echo '2) Python [SimpleHTTP] [no ws examples support]'
+    echo '------------------------------------------------'
+    echo 'Choose: '
+  fi
+
+  if [ "$1" == "main" ] && [ "$2" == "1" ]
+  then
+    echo '------------------------------------------------'
+    echo 'Which example would you like to run?'
+    echo '------------------------------------------------'
+    echo '1) Bookmark Application'
+    echo '2) Websocket Chat Application'
+    echo '------------------------------------------------'
+    echo 'Choose: '
+  fi
+
+  if [ "$1" == "main" ] && [ "$2" == "2" ]
+  then
+    echo '------------------------------------------------'
+    echo 'Which example would you like to run?'
+    echo '------------------------------------------------'
+    echo '1) Bookmark Application'
+    echo '------------------------------------------------'
+    echo 'Choose: '
+  fi
+}
+
+function run_server {
+  # Ruby Server
+  if [ "$1" == "1" ]
+  then
+    echo 'Running ruby server...';
+    bundle install &> /dev/null
+    # Pass application option
+    ./bin/rbserv $2
+  fi
+
+  # Python Server
+  if [ "$1" == "2" ]
+  then
+    echo 'Running python server...';
+    # Pass application option
+    ./bin/pyserv $2
+  fi
+}
+
+question main
+read main_choice
+
+question main $main_choice
+read second_choice
+
+run_server $main_choice $second_choice
+

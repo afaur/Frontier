@@ -1,0 +1,9 @@
+{{#each links}}
+  <div>
+    <button type="button" class="close">&times;</button>
+    <button type="button" class="btn btn-link">
+      <span class="glyphicon glyphicon-pencil"></span>
+    </button>
+    <a href="/{{ slug }}" target="_blank">{{ title }}</a>
+  </div>
+{{/each}}
